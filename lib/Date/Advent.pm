@@ -42,38 +42,43 @@ if you don't export anything, such as for a purely object-oriented module.
 =cut
 
 has 'date' => (
-	is => 'rw', 
+	is => 'ro', 
 	isa => 'Time::Piece',
 );
 
 has 'christmas' => (
-	is => 'rw', 
+	is => 'ro', 
 	isa => 'Time::Piece',
 	init_arg => undef,
+	writer => '_setChristmas',
 );
 
 has 'firstSunday' => (
-	is => 'rw',
+	is => 'ro',
 	isa => 'Time::Piece',
 	init_arg => undef,
+	writer => '_setFirstSunday',
 );
 
 has 'secondSunday' => (
-	is => 'rw',
+	is => 'ro',
 	isa => 'Time::Piece',
 	init_arg => undef,
+	writer => '_setSecondSunday',
 );
 
 has 'thirdSunday' => (
-	is => 'rw',
+	is => 'ro',
 	isa => 'Time::Piece',
 	init_arg => undef,
+	writer => '_setThirdSunday',
 );
 
 has 'fourthSunday' => (
-	is => 'rw',
+	is => 'ro',
 	isa => 'Time::Piece',
 	init_arg => undef,
+	writer => '_setFourthSunday',
 );
 
 sub BUILD {
@@ -103,11 +108,11 @@ sub BUILD {
 		$firstAdvent = &prevSunday($secondAdvent);
 	}
 
-	$self->christmas($christmasDay);
-	$self->firstSunday($firstAdvent);
-	$self->secondSunday($secondAdvent);
-	$self->thirdSunday($thirdAdvent);
-	$self->fourthSunday($fourthAdvent);
+	$self->_setChristmas($christmasDay);
+	$self->_setFirstSunday($firstAdvent);
+	$self->_setSecondSunday($secondAdvent);
+	$self->_setThirdSunday($thirdAdvent);
+	$self->_setFourthSunday($fourthAdvent);
 }
 
 
