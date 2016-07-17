@@ -10,7 +10,7 @@ use Date::Lectionary::Time qw(nextSunday prevSunday);
 
 =head1 NAME
 
-Date::Advent - The great new Date::Advent!
+Date::Advent
 
 =head1 VERSION
 
@@ -18,12 +18,14 @@ Version 1.20160525
 
 =cut
 
-our $VERSION = '1.20160525';
+our $VERSION = '1.20160716';
 
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
+Date::Advent takes a Time::Piece date and calculates all four Sundays of Advent for the current Christian liturgical year.
+
+As Advent is the beginning of the Christian liturgical calendar, this usually results in the date for Advent in the current year being dates in the past.  E.g. The Sundays of Advent returned for 12. March 2016 would be 29. November 2015, 6. December 2015, 13. December 2015, and 20. December 2015.
 
 Perhaps a little code snippet.
 
@@ -31,11 +33,6 @@ Perhaps a little code snippet.
 
     my $foo = Date::Advent->new();
     ...
-
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
 
 =head1 SUBROUTINES/METHODS
 
@@ -80,6 +77,12 @@ has 'fourthSunday' => (
 	init_arg => undef,
 	writer => '_setFourthSunday',
 );
+
+=head2 BUILD
+
+Constructor for the Date::Advent object.  Takes the Time::Piece argument of date as the date to calculate the current Christian liturgical year's Sundays of Advent from.
+
+=cut
 
 sub BUILD {
 	my $self = shift;
