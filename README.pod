@@ -30,7 +30,7 @@ The development of this module is hosted on GitHub -- L<https://github.com/marma
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Date::Lectionary::Time
+    perldoc Date::Advent
 
 You can also look for information at:
 
