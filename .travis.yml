@@ -9,4 +9,5 @@ before_install:
   - make
   - make install
   - cpanm --quiet --notest --installdeps .
+  - rm -R Date-Lectionary-Time
   - cd ..
