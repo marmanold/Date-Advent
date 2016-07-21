@@ -9,3 +9,4 @@ before_install:
   - make
   - make install
   - cpanm --quiet --notest --installdeps .
+  - cd ..
