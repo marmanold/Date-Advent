@@ -9,3 +9,4 @@ before_install:
   - perl Makefile.PL
   - make
   - make install
+  - cd ..
