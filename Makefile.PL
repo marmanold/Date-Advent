@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME             => 'Date::Advent',
-    AUTHOR           => q{Michael Wayne Arnold <michael@rnold.info>},
+    AUTHOR           => q{Michael Wayne Arnold <marmanold@cpan.org>},
     VERSION_FROM     => 'lib/Date/Advent.pm',
     ABSTRACT         => '',
     LICENSE          => 'perl_5',
@@ -23,7 +23,7 @@ WriteMakefile(
         'Try::Tiny' => '0.24', 
         'Time::Piece' => '1.31',
         'Moose' => '2.1804', 
-        'Date::Lectionary::Time' => '1.20160524',
+        'Date::Lectionary::Time' => '1.20160727',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Date-Lectionary-Time-*' },

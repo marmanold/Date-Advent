@@ -14,11 +14,11 @@ Date::Advent
 
 =head1 VERSION
 
-Version 1.20160525
+Version 1.20160727
 
 =cut
 
-our $VERSION = '1.20160716';
+our $VERSION = '1.20160727';
 
 
 =head1 SYNOPSIS
@@ -97,18 +97,18 @@ sub BUILD {
 	
 	my $christmasDay = Time::Piece->strptime("$xmasYear-12-25", "%Y-%m-%d");
 	
-	my $fourthAdvent = &prevSunday($christmasDay);
-	my $thirdAdvent = &prevSunday($fourthAdvent);
-	my $secondAdvent = &prevSunday($thirdAdvent);
-	my $firstAdvent = &prevSunday($secondAdvent);
+	my $fourthAdvent = prevSunday($christmasDay);
+	my $thirdAdvent = prevSunday($fourthAdvent);
+	my $secondAdvent = prevSunday($thirdAdvent);
+	my $firstAdvent = prevSunday($secondAdvent);
 
 	if ($self->date < $firstAdvent) {
 		$christmasDay = $christmasDay->add_years(-1);
 	
-		$fourthAdvent = &prevSunday($christmasDay);
-		$thirdAdvent = &prevSunday($fourthAdvent);
-		$secondAdvent = &prevSunday($thirdAdvent);
-		$firstAdvent = &prevSunday($secondAdvent);
+		$fourthAdvent = prevSunday($christmasDay);
+		$thirdAdvent = prevSunday($fourthAdvent);
+		$secondAdvent = prevSunday($thirdAdvent);
+		$firstAdvent = prevSunday($secondAdvent);
 	}
 
 	$self->_setChristmas($christmasDay);
@@ -122,13 +122,12 @@ sub BUILD {
 
 =head1 AUTHOR
 
-Michael Wayne Arnold, C<< <michael at rnold.info> >>
+Michael Wayne Arnold, C<< <marmanold at cpan.org> >>
 
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-date-advent at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Advent>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Advent>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 
 
