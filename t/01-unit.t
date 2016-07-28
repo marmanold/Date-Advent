@@ -40,23 +40,23 @@ $testAdvent = Date::Advent->new(date => Time::Piece->strptime("2009-12-12", "%Y-
 is(
 	$testAdvent->firstSunday, 
 	Time::Piece->strptime("2009-11-29", "%Y-%m-%d"),
-	'First Sunday of Advent for 2016-01-01'
+	'First Sunday of Advent for 2009-12-12'
 );
 
 is(
 	$testAdvent->secondSunday, 
 	Time::Piece->strptime("2009-12-06", "%Y-%m-%d"),
-	'Second Sunday of Advent for 2016-01-01'
+	'Second Sunday of Advent for 2009-12-12'
 );
 
 is(
 	$testAdvent->thirdSunday, 
 	Time::Piece->strptime("2009-12-13", "%Y-%m-%d"),
-	'Third Sunday of Advent for 2016-01-01'
+	'Third Sunday of Advent for 2009-12-12'
 );
 
 is(
 	$testAdvent->fourthSunday, 
 	Time::Piece->strptime("2009-12-20", "%Y-%m-%d"),
-	'Fourth Sunday of Advent for 2016-01-01'
+	'Fourth Sunday of Advent for 2009-12-12'
 );

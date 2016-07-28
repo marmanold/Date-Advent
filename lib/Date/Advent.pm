@@ -29,10 +29,15 @@ As Advent is the beginning of the Christian liturgical calendar, this usually re
 
 Perhaps a little code snippet.
 
+    use Time::Piece;
     use Date::Advent;
 
-    my $foo = Date::Advent->new();
-    ...
+    my $testAdvent = Date::Advent->new(date => Time::Piece->strptime("2016-01-01", "%Y-%m-%d"));
+    say $testAdvent->firstSunday; #Gives date for first Sunday of Advent
+    say $testAdvent->secondSunday; #Gives date for second Sunday of Advent
+    say $testAdvent->thirdSunday; #Gives date for third Sunday of Advent
+    say $testAdvent->fourthSunday; #Gives date for fourth Sunday of Advent
+    say $testAdvent->christmas; #Gives date of Christmas
 
 =head1 SUBROUTINES/METHODS
 

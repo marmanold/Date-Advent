@@ -6,7 +6,7 @@ WriteMakefile(
     NAME             => 'Date::Advent',
     AUTHOR           => q{Michael Wayne Arnold <marmanold@cpan.org>},
     VERSION_FROM     => 'lib/Date/Advent.pm',
-    ABSTRACT         => '',
+    ABSTRACT         => 'Date::Advent takes a Time::Piece date and calculates all four Sundays of Advent for the current Christian liturgical year.',
     LICENSE          => 'perl_5',
     PL_FILES         => {},
     MIN_PERL_VERSION => 5.022000,
