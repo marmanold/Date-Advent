@@ -7,6 +7,7 @@ use Carp;
 use Try::Tiny;
 use Time::Piece;
 use Date::Lectionary::Time qw(nextSunday prevSunday);
+use namespace::autoclean;
 
 =head1 NAME
 
