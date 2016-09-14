@@ -16,15 +16,24 @@ WriteMakefile(
     BUILD_REQUIRES => {
         'Test::More' => '1.302040',
         'Test::CheckManifest' => '0.9',
-        'Test::Exception' => '0.43', 
+        'Test::Exception' => '0.43',
     },
     PREREQ_PM => {
-        'Carp' => '1.38', 
-        'Try::Tiny' => '0.24', 
+        'Carp' => '1.38',
+        'Try::Tiny' => '0.24',
         'Time::Piece' => '1.31',
-        'Moose' => '2.1804', 
+        'Moose' => '2.1804',
         'Date::Lectionary::Time' => '1.20160727',
     },
+    META_ADD => {
+      resources => {
+        repository => {
+            type => 'git',
+            url => 'git://github.com/marmanold/Date-Advent.git',
+            web => 'https://github.com/marmanold/Date-Advent',
+        },
+      },
+    },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES => 'Date-Lectionary-Time-*' },
+    clean => { FILES => 'Date-Advent-*' },
 );
