@@ -4,7 +4,6 @@ use v5.22;
 use Moose;
 
 use Carp;
-use Try::Tiny;
 use Time::Piece;
 use Date::Lectionary::Time qw(nextSunday prevSunday);
 use namespace::autoclean;
@@ -15,12 +14,11 @@ Date::Advent
 
 =head1 VERSION
 
-Version 1.20160727
+Version 1.20161219
 
 =cut
 
-our $VERSION = '1.20160727';
-
+our $VERSION = '1.20161219';
 
 =head1 SYNOPSIS
 
@@ -45,43 +43,43 @@ Perhaps a little code snippet.
 =cut
 
 has 'date' => (
-	is => 'ro', 
-	isa => 'Time::Piece',
+    is  => 'ro',
+    isa => 'Time::Piece',
 );
 
 has 'christmas' => (
-	is => 'ro', 
-	isa => 'Time::Piece',
-	init_arg => undef,
-	writer => '_setChristmas',
+    is       => 'ro',
+    isa      => 'Time::Piece',
+    init_arg => undef,
+    writer   => '_setChristmas',
 );
 
 has 'firstSunday' => (
-	is => 'ro',
-	isa => 'Time::Piece',
-	init_arg => undef,
-	writer => '_setFirstSunday',
+    is       => 'ro',
+    isa      => 'Time::Piece',
+    init_arg => undef,
+    writer   => '_setFirstSunday',
 );
 
 has 'secondSunday' => (
-	is => 'ro',
-	isa => 'Time::Piece',
-	init_arg => undef,
-	writer => '_setSecondSunday',
+    is       => 'ro',
+    isa      => 'Time::Piece',
+    init_arg => undef,
+    writer   => '_setSecondSunday',
 );
 
 has 'thirdSunday' => (
-	is => 'ro',
-	isa => 'Time::Piece',
-	init_arg => undef,
-	writer => '_setThirdSunday',
+    is       => 'ro',
+    isa      => 'Time::Piece',
+    init_arg => undef,
+    writer   => '_setThirdSunday',
 );
 
 has 'fourthSunday' => (
-	is => 'ro',
-	isa => 'Time::Piece',
-	init_arg => undef,
-	writer => '_setFourthSunday',
+    is       => 'ro',
+    isa      => 'Time::Piece',
+    init_arg => undef,
+    writer   => '_setFourthSunday',
 );
 
 =head2 BUILD
@@ -91,40 +89,38 @@ Constructor for the Date::Advent object.  Takes the Time::Piece argument of date
 =cut
 
 sub BUILD {
-	my $self = shift;
+    my $self = shift;
 
-	my $xmasYear;
-	if ($self->date->mon==11||$self->date->mon==12) {
-		$xmasYear = $self->date->year;
-	}
-	else {
-		$xmasYear = $self->date->year-1;
-	}
-	
-	my $christmasDay = Time::Piece->strptime("$xmasYear-12-25", "%Y-%m-%d");
-	
-	my $fourthAdvent = prevSunday($christmasDay);
-	my $thirdAdvent = prevSunday($fourthAdvent);
-	my $secondAdvent = prevSunday($thirdAdvent);
-	my $firstAdvent = prevSunday($secondAdvent);
+    my $xmasYear;
+    if ( $self->date->mon == 11 || $self->date->mon == 12 ) {
+        $xmasYear = $self->date->year;
+    }
+    else {
+        $xmasYear = $self->date->year - 1;
+    }
 
-	if ($self->date < $firstAdvent) {
-		$christmasDay = $christmasDay->add_years(-1);
-	
-		$fourthAdvent = prevSunday($christmasDay);
-		$thirdAdvent = prevSunday($fourthAdvent);
-		$secondAdvent = prevSunday($thirdAdvent);
-		$firstAdvent = prevSunday($secondAdvent);
-	}
+    my $christmasDay = Time::Piece->strptime( "$xmasYear-12-25", "%Y-%m-%d" );
 
-	$self->_setChristmas($christmasDay);
-	$self->_setFirstSunday($firstAdvent);
-	$self->_setSecondSunday($secondAdvent);
-	$self->_setThirdSunday($thirdAdvent);
-	$self->_setFourthSunday($fourthAdvent);
+    my $fourthAdvent = prevSunday($christmasDay);
+    my $thirdAdvent  = prevSunday($fourthAdvent);
+    my $secondAdvent = prevSunday($thirdAdvent);
+    my $firstAdvent  = prevSunday($secondAdvent);
+
+    if ( $self->date < $firstAdvent ) {
+        $christmasDay = $christmasDay->add_years(-1);
+
+        $fourthAdvent = prevSunday($christmasDay);
+        $thirdAdvent  = prevSunday($fourthAdvent);
+        $secondAdvent = prevSunday($thirdAdvent);
+        $firstAdvent  = prevSunday($secondAdvent);
+    }
+
+    $self->_setChristmas($christmasDay);
+    $self->_setFirstSunday($firstAdvent);
+    $self->_setSecondSunday($secondAdvent);
+    $self->_setThirdSunday($thirdAdvent);
+    $self->_setFourthSunday($fourthAdvent);
 }
-
-
 
 =head1 AUTHOR
 
@@ -186,4 +182,4 @@ See L<http://dev.perl.org/licenses/> for more information.
 
 __PACKAGE__->meta->make_immutable;
 
-1; # End of Date::Advent
+1;    # End of Date::Advent
