@@ -14,11 +14,11 @@ Date::Advent - Calculate the Sundays of Advent
 
 =head1 VERSION
 
-Version 1.20161220
+Version 1.20161221
 
 =cut
 
-our $VERSION = '1.20161220';
+our $VERSION = '1.20161221';
 
 =head1 SYNOPSIS
 
@@ -38,7 +38,7 @@ As Advent is the beginning of the Christian liturgical calendar, this usually re
 
 The development of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Advent> -- and tested via TravisCI.
 
-=for html <a href="https://travis-ci.org/marmanold/Date-Advent"><img src="https://travis-ci.org/marmanold/Date-Advent.svg?branch=master"></a>
+=for html <a href='https://travis-ci.org/marmanold/Date-Advent'><img src='https://travis-ci.org/marmanold/Date-Advent.svg?branch=master'></a>
 
 =for html <a href='https://coveralls.io/github/marmanold/Date-Advent?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Advent/badge.svg?branch=master' alt='Coverage Status' /></a>
 
