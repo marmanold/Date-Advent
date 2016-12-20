@@ -112,6 +112,8 @@ has 'fourthSunday' => (
 
 =head1 Object Constructor
 
+=head2 BUILD
+
 Constructor for the Date::Advent object.  Takes the Time::Piece argument of C<date> as the date to calculate the current Christian liturgical year's Sundays of Advent from.  The resulting object is immutable and cannot be changed once created.
 
   my $testAdvent = Date::Advent->new(date => Time::Piece->strptime("2016-01-01", "%Y-%m-%d"));
