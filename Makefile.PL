@@ -27,8 +27,9 @@ WriteMakefile(
         'Moose'                  => '2.1804',
         'Date::Lectionary::Time' => '1.20160727',
     },
-    META_ADD => {
-        resources => {
+    META_MERGE => {
+        "meta-spec" => { version => 2 },
+        resources   => {
             repository => {
                 type => 'git',
                 url  => 'git://github.com/marmanold/Date-Advent.git',

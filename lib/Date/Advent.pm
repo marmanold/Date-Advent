@@ -10,23 +10,21 @@ use namespace::autoclean;
 
 =head1 NAME
 
-Date::Advent
+Date::Advent - Calculate the Sundays of Advent
 
 =head1 VERSION
 
-Version 1.20161219
+Version 1.20161220
 
 =cut
 
-our $VERSION = '1.20161219';
+our $VERSION = '1.20161220';
 
 =head1 SYNOPSIS
 
 Date::Advent takes a Time::Piece date and calculates all four Sundays of Advent for the current Christian liturgical year.
 
 As Advent is the beginning of the Christian liturgical calendar, this usually results in the date for Advent in the current year being dates in the past.  E.g. The Sundays of Advent returned for 12. March 2016 would be 29. November 2015, 6. December 2015, 13. December 2015, and 20. December 2015.
-
-Perhaps a little code snippet.
 
     use Time::Piece;
     use Date::Advent;
@@ -38,7 +36,37 @@ Perhaps a little code snippet.
     say $testAdvent->fourthSunday; #Gives date for fourth Sunday of Advent
     say $testAdvent->christmas; #Gives date of Christmas
 
-=head1 SUBROUTINES/METHODS
+The development of this module is hosted on GitHub -- L<https://github.com/marmanold/Date-Advent> -- and tested via TravisCI.
+
+=for html <a href="https://travis-ci.org/marmanold/Date-Advent"><img src="https://travis-ci.org/marmanold/Date-Advent.svg?branch=master"></a>
+
+=for html <a href='https://coveralls.io/github/marmanold/Date-Advent?branch=master'><img src='https://coveralls.io/repos/github/marmanold/Date-Advent/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+=head1 Object Attributes
+
+=head2 date
+
+Time::Piece date object.  Only attribute required at object construction.
+
+=head2 christmas
+
+Time::Piece attribute for Christmas Day as calculated from the C<date> given at object construction.
+
+=head2 firstSunday
+
+Time::Piece attribute for the first Sunday of Advent as calculated from the C<date> given at object construction.
+
+=head2 secondSunday
+
+Time::Piece attribute for the second Sunday of Advent as calculated from the C<date> given at object construction.
+
+=head2 thirdSunday
+
+Time::Piece attribute for the third Sunday of Advent as calculated from the C<date> given at object construction.
+
+=head2 fourthSunday
+
+Time::Piece attribute for the fourth Sunday of Advent as calculated from the C<date> given at object construction.
 
 =cut
 
@@ -82,9 +110,11 @@ has 'fourthSunday' => (
     writer   => '_setFourthSunday',
 );
 
-=head2 BUILD
+=head1 Object Constructor
 
-Constructor for the Date::Advent object.  Takes the Time::Piece argument of date as the date to calculate the current Christian liturgical year's Sundays of Advent from.
+Constructor for the Date::Advent object.  Takes the Time::Piece argument of C<date> as the date to calculate the current Christian liturgical year's Sundays of Advent from.  The resulting object is immutable and cannot be changed once created.
+
+  my $testAdvent = Date::Advent->new(date => Time::Piece->strptime("2016-01-01", "%Y-%m-%d"));
 
 =cut
 
