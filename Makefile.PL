@@ -37,6 +37,13 @@ WriteMakefile(
                 web  => 'https://github.com/marmanold/Date-Advent',
             },
         },
+        provides => {
+            'Date::Advent' => {
+                file => 'lib/Date/Advent.pm',
+            },
+        },
+        keywords  => [qw/ advent christmas lectionary christian liturgical /],
+        x_twitter => 'https://www.twitter.com/marmanold/',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES    => 'Date-Advent-*' },
