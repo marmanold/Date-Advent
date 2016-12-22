@@ -14,11 +14,11 @@ Date::Advent - Calculate the Sundays of Advent
 
 =head1 VERSION
 
-Version 1.20161221
+Version 1.20161222
 
 =cut
 
-our $VERSION = '1.20161221';
+our $VERSION = '1.20161222';
 
 =head1 SYNOPSIS
 
@@ -163,9 +163,6 @@ Michael Wayne Arnold, C<< <marmanold at cpan.org> >>
 Please report any bugs or feature requests to C<bug-date-advent at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Date-Advent>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
-
-
-
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
@@ -198,6 +195,7 @@ L<http://search.cpan.org/dist/Date-Advent/>
 
 =head1 ACKNOWLEDGEMENTS
 
+Many thanks to my beautiful wife, Jennifer, and my amazing daughter, Rosemary.  But, above all, SOLI DEO GLORIA!
 
 =head1 LICENSE AND COPYRIGHT
 

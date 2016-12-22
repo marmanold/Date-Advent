@@ -26,6 +26,7 @@ WriteMakefile(
         'Time::Piece'            => '1.31',
         'Moose'                  => '2.1804',
         'Date::Lectionary::Time' => '1.20160727',
+        'namespace::autoclean'   => '0.28',
     },
     META_MERGE => {
         "meta-spec" => { version => 2 },
