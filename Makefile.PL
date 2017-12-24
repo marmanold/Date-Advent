@@ -10,7 +10,7 @@ WriteMakefile(
     VERSION_FROM => 'lib/Date/Advent.pm',
     ABSTRACT =>
 'Date::Advent takes a Time::Piece date and calculates all four Sundays of Advent for the current Christian liturgical year.',
-    LICENSE            => 'perl_5',
+    LICENSE            => 'freebsd',
     PL_FILES           => {},
     MIN_PERL_VERSION   => 5.022000,
     CONFIGURE_REQUIRES => {
@@ -40,6 +40,7 @@ WriteMakefile(
         provides => {
             'Date::Advent' => {
                 file => 'lib/Date/Advent.pm',
+                version => '1.20171223',
             },
         },
         keywords  => [qw/ advent christmas lectionary christian liturgical /],
