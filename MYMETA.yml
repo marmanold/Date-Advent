@@ -33,6 +33,7 @@ requires:
   Carp: '1.38'
   Date::Lectionary::Time: '1.20160727'
   Moose: '2.1804'
+  MooseX::StrictConstructor: '0.21'
   Time::Piece: '1.31'
   namespace::autoclean: '0.28'
   perl: '5.022'
